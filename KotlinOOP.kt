@@ -6,6 +6,7 @@ fun main(){
     var kartik = Person("Kartik","Kumar")
     karan.stateHobby()
     kartik.hobby = "weight lifting"
+    kartik.stateHobby()
     MobilePhone("Ios","Apple","Iphone 14 pro max")
 }
 
@@ -13,8 +14,10 @@ class Person (firstName: String = "jack",lastName: String = "black"){
     // Member variable / properties
     var age: Int? = null
     var hobby : String = "playing basketball"
+    var FirstName : String? = null
     // Initializer block
     init{
+        this.FirstName = firstName
         print("Initializing new Person object with $firstName $lastName\n")
     }
     // secondary constructor
@@ -24,7 +27,9 @@ class Person (firstName: String = "jack",lastName: String = "black"){
 
             }
     fun stateHobby(){
-        println("My hobby is $hobby")
+        // firstName parameter couldnt be used in this block as it is not a member variable
+        // we have to initialize and assign it to a member variable (FirstName) to ise it
+        println("$FirstName\'s hobby is $hobby")
     }
 }
 
