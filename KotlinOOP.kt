@@ -8,6 +8,21 @@ fun main(){
     kartik.hobby = "weight lifting"
     kartik.stateHobby()
     MobilePhone("Ios","Apple","Iphone 14 pro max")
+    var myCar = Car()
+    myCar.owner  // will generate UninitializedPropertyAccessException if property is not initialized
+    println(myCar.brandName)
+    println(myCar.owner)
+}
+
+class Car(){
+    lateinit var owner : String  // lateinit is used when we dont want to initialize the var right at declaration
+    var brandName : String = "Audi"
+    get(){
+        return field.lowercase()
+    }
+    init {
+       this.owner = "Karan"
+    }
 }
 
 class Person (firstName: String = "jack",lastName: String = "black"){
